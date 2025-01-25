@@ -3,7 +3,7 @@ from src.utils import save_to_json
 
 def main():
     # Replace these with your actual API key and channel ID
-    api_key = "AIzaSyBXvGDOITfWDwGUPYL9rQLU1fZi_X56J4s"  # Replace with a valid YouTube Data API key
+    const api_key = process.env.API_KEY;  # Replace with a valid YouTube Data API key
     channel_id = "UC_x5XG1OV2P6uZZ5FSM9Ttw"  # Replace with a valid channel ID
 
     try:
