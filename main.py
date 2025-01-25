@@ -2,21 +2,21 @@ from src.youtube_api import get_channel_videos, get_video_stats
 from src.utils import save_to_json
 
 def main():
-    # Replace these with your actual API key and channel ID
-    api_key = "AIzaSyBXvGDOITfWDwGUPYL9rQLU1fZi_X56J4s"  # Replace with a valid YouTube Data API key
-    channel_id = "UC_x5XG1OV2P6uZZ5FSM9Ttw"  # Replace with a valid channel ID
+    
+    api_key = "AIzaSyBXvGDOITfWDwGUPYL9rQLU1fZi_X56J4s"  
+    channel_id = "UC_x5XG1OV2P6uZZ5FSM9Ttw" 
 
     try:
-        # Fetch videos from the specified channel
+       
         videos = get_channel_videos(api_key, channel_id)
         
         if videos:
             video_data = []
             for video in videos:
-                video_id = video['id']['videoId']  # This will now always exist
+                video_id = video['id']['videoId']  
                 stats = get_video_stats(api_key, video_id)
                 
-                # Build a dictionary of the video data
+             
                 video_info = {
                     'Title': video['snippet']['title'],
                     'Video ID': video_id,
